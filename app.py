@@ -1,11 +1,18 @@
 import streamlit as st
-import pickle
 import pandas as pd
 import requests
+from pymongo import MongoClient
+import gridfs
+from db_methods import get_similarities, get_movies
+
+movies = get_movies()
+similarity = get_similarities()
+
+### Old Methods. Replaced by GridFS & MongoDB Find in Real Time
+# movies = pickle.load(open('processed_movie_list.pkl','rb'))
+# similarity = pickle.load(open('similarity.pkl','rb'))
 
 st.header('MongoDB Movie Recommender System')
-movies = pickle.load(open('processed_movie_list.pkl','rb'))
-similarity = pickle.load(open('similarity.pkl','rb'))
 
 movie_list = movies['title'].values
 selected_movie = st.selectbox(

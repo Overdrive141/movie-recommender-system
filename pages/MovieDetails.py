@@ -2,11 +2,13 @@ import streamlit as st
 import pickle
 import pandas as pd
 import numpy as np
+import db_methods
 
 st.header('Movie Similarity Analysis')
-movies = pickle.load(open('processed_movie_list.pkl','rb'))
-similarity = pickle.load(open('similarity.pkl','rb'))
-
+# movies = pickle.load(open('processed_movie_list.pkl','rb'))
+# similarity = pickle.load(open('similarity.pkl','rb'))
+movies = db_methods.get_movies()
+similarity = db_methods.get_similarities()
 
 
 movie_list = movies['title'].values
