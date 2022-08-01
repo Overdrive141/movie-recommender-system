@@ -4,6 +4,7 @@ import requests
 from pymongo import MongoClient
 import gridfs
 from db_methods import get_similarities, get_movies
+import pickle
 
 # movies = get_movies()
 # similarity = get_similarities()
