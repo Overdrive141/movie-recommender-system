@@ -5,12 +5,12 @@ from pymongo import MongoClient
 import gridfs
 from db_methods import get_similarities, get_movies
 
-movies = get_movies()
-similarity = get_similarities()
+# movies = get_movies()
+# similarity = get_similarities()
 
 ### Old Methods. Replaced by GridFS & MongoDB Find in Real Time
-# movies = pickle.load(open('processed_movie_list.pkl','rb'))
-# similarity = pickle.load(open('similarity.pkl','rb'))
+movies = pickle.load(open('processed_movie_list.pkl','rb'))
+similarity = pickle.load(open('similarity.pkl','rb'))
 
 st.header('MongoDB Movie Recommender System')
 
